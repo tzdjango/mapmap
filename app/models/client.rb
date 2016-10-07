@@ -1,7 +1,7 @@
 class Client < ActiveRecord::Base
-  has_many :clientcontactinfo, dependent: :destroy
-  has_many :clientaddress, dependent: :destroy
-  has_many :userauth, dependent: :destroy
-  has_many :ownershiphistory, dependent: :destroy
-  has_many :messagesmeta, dependent: :destroy
+  has_one :clientcontactinfo, dependent: :destroy
+  has_one :clientaddress, dependent: :destroy
+  has_one :userauth, dependent: :destroy
+  has_one :ownershiphistory, dependent: :destroy
+  has_many :metamessages, dependent: :destroy
 end
