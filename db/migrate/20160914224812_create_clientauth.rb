@@ -6,9 +6,9 @@ class CreateClientauth < ActiveRecord::Migration
       t.text    :secret
       t.text    :language
       t.text    :registrationkey
-      t.datetime    :registrationinitiated
-      t.datetime    :registrationvalieduntil
-      t.datetime    :registrationcompleted
+      t.timestamp    :registrationinitiated
+      t.timestamp    :registrationvalieduntil
+      t.timestamp    :registrationcompleted
       t.text        :status
       t.boolean     :isvalid
       t.text        :apikey

@@ -4,8 +4,8 @@ class CreateReservation < ActiveRecord::Migration
       t.integer    :repairshop_id
       t.integer    :repairshopproduct_id
       t.integer    :clientauth_id
-      t.datetime   :starttime
-      t.datetime   :endtime
+      t.timestamp  :starttime
+      t.timestamp  :endtime
       t.text       :regnum
       t.integer    :client_id
       t.text       :message

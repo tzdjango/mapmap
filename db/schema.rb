@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161007061442) do
+ActiveRecord::Schema.define(version: 20161007063247) do
 
   create_table "capacities", force: :cascade do |t|
     t.integer  "repairshop_id"
@@ -207,12 +207,29 @@ ActiveRecord::Schema.define(version: 20161007061442) do
     t.datetime "updated_at"
   end
 
+  create_table "roles", force: :cascade do |t|
+    t.integer "user_id"
+    t.text    "name"
+    t.text    "description"
+  end
+
   create_table "servicehistories", force: :cascade do |t|
     t.integer  "vehicle_id"
     t.text     "vin"
     t.text     "servicedby"
     t.text     "serviceaction"
     t.date     "servicedate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "email"
+    t.boolean  "active"
+    t.integer  "logincount"
+    t.datetime "confirmedat"
+    t.datetime "lastlogin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
