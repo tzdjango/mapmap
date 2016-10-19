@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161007063247) do
+ActiveRecord::Schema.define(version: 20161019004221) do
 
   create_table "capacities", force: :cascade do |t|
     t.integer  "repairshop_id"
@@ -75,6 +75,26 @@ ActiveRecord::Schema.define(version: 20161007063247) do
     t.text     "feedbacktext"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "gasprices", force: :cascade do |t|
+    t.float    "price"
+    t.text     "quality"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "gasstation_id"
+  end
+
+  create_table "gasstations", force: :cascade do |t|
+    t.text   "chain"
+    t.text   "name"
+    t.text   "streetaddress"
+    t.text   "zipcode"
+    t.text   "city"
+    t.text   "country"
+    t.string "email"
+    t.float  "xcoord"
+    t.float  "ycoord"
   end
 
   create_table "messageproductids", force: :cascade do |t|
@@ -221,6 +241,20 @@ ActiveRecord::Schema.define(version: 20161007063247) do
     t.date     "servicedate"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "surveyconsumerdata", force: :cascade do |t|
+    t.integer  "surveyconsumer_id"
+    t.float    "xcoord"
+    t.float    "ycoord"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "surveyconsumers", force: :cascade do |t|
+    t.text "email"
+    t.text "regnum"
+    t.text "deviceinfo"
   end
 
   create_table "users", force: :cascade do |t|
